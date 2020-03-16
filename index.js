@@ -101,7 +101,7 @@ Script.prototype.runInContext = function (context) {
         }
     });
     
-    document.body.removeChild(iframe);
+    Promise.resolve(res).then(() => document.body.removeChild(iframe));
     
     return res;
 };
